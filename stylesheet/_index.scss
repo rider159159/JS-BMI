@@ -1,0 +1,139 @@
+$underweight-color:#31BAF9;
+$great-color:#86D73F;
+$overweight-color:#FF982D;
+$mild-obesity-color:#FF6C03;
+$severe-obesity-color :#FF1200;
+
+@mixin result-color($color) {
+    border-color: $color;
+    color: $color;
+
+    .btn {
+        background-color: $color;
+    }
+}
+
+@mixin border-color($b-color) {
+    border-color: $b-color;
+}
+
+.header-img {
+    background-image: url(https://upload.cc/i1/2019/07/10/I1Nkvs.png);
+    width: 117px;
+    height: 117px;
+    background-repeat: no-repeat;
+}
+
+.BMI-height,
+.BMI-bodyweight {
+    border: 2px solid #FFD366;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: none;
+}
+
+.send {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: none;
+    color: inherit;
+    background-color: #ffd366;
+
+    &:hover {
+        box-shadow: 0 1px 6px 3px #ffd366;
+        background-color: #ffd366;
+    }
+
+    &:active {
+        background-color: #dea821;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+
+.result-num {
+    width: 123px;
+    height: 123px;
+    border: 6px solid;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    padding: 1.5em 0;
+}
+
+.return {
+    position: absolute;
+    border-radius: 50%;
+    right: -5%;
+    bottom: -5%;
+    padding: .375rem .75rem;
+    border: 3px solid #424242;
+    transition: ease .3s;
+
+    &:hover {
+        transform: rotate(660deg)
+    }
+}
+
+table tr {
+    border-left: 6px solid;
+    background-color: #fff;
+}
+
+table th {
+    font-size: 12px;
+}
+
+table th span {
+    font-size: 20px;
+}
+
+table i {
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+.underweight {
+    @include result-color($underweight-color)
+}
+
+.underweight-bc {
+    @include border-color($underweight-color)
+}
+
+.great {
+    @include result-color($great-color)
+}
+
+.great-bc {
+    @include border-color($great-color)
+}
+
+.overweight {
+    @include result-color($overweight-color)
+}
+
+.overweight-bc {
+    @include border-color($overweight-color)
+}
+
+.mild-obesity,
+.moderate-obesity {
+    @include result-color($mild-obesity-color)
+}
+
+.mild-obesity-bc,
+.moderate-obesity-bc {
+    @include border-color($mild-obesity-color)
+}
+
+.severe-obesity {
+    @include result-color($severe-obesity-color)
+}
+
+.severe-obesity-bc {
+    @include border-color($severe-obesity-color)
+}
