@@ -154,3 +154,5 @@ weight.addEventListener('keyup', weightkeyup)
 returnBtn.addEventListener('click', returnButton)
 list.addEventListener('click', delData)
 allClose.addEventListener('click', allDelData)
+
+
